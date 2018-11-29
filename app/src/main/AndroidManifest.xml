@@ -26,9 +26,9 @@
 
         <!--unable to find activity yg ini -->
         <!--<activity-->
-            <!--android:name=".SettingsActivity"-->
-            <!--android:exported="false"-->
-            <!--android:parentActivityName=".MainActivity" />-->
+        <!--android:name=".SettingsActivity"-->
+        <!--android:exported="false"-->
+        <!--android:parentActivityName=".MainActivity" />-->
 
         <activity
             android:name=".AddTaskActivity"
@@ -41,18 +41,18 @@
             android:parentActivityName=".MainActivity" />
 
         <!--klo ini ditambahin malah error-->
-        <!--<service-->
-            <!--android:name=".data.TaskUpdateService"-->
-            <!--android:exported="false" />-->
+        <service
+            android:name=".data.TaskUpdateService"
+            android:exported="false" />
 
-        <!--<service-->
-            <!--android:name=".reminders.ReminderAlarmService"-->
-            <!--android:exported="false" />-->
+        <service
+            android:name=".reminders.ReminderAlarmService"
+            android:exported="false" />
 
-        <!--<provider-->
-            <!--android:name=".data.TaskProvider"-->
-            <!--android:authorities="com.noteit.mkpl_android_note_it"-->
-            <!--android:exported="false" />-->
+        <provider
+            android:name=".data.TaskProvider"
+            android:authorities="com.noteit.mkpl_android_note_it"
+            android:exported="false" />
 
     </application>
 
