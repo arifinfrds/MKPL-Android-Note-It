@@ -41,7 +41,8 @@ public class DatabaseContract {
     }
 
     //Unique authority string for the content provider
-    public static final String CONTENT_AUTHORITY = "com.mpkl.akhir.project.noteit";
+    // public static final String CONTENT_AUTHORITY = "com.mpkl.akhir.project.noteit";
+    public static final String CONTENT_AUTHORITY = "com.noteit.mkpl_android_note_it";
 
     /* Sort order constants */
     //Priority first, Completed last, the rest by date

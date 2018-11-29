@@ -2,11 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.noteit.mkpl_android_note_it">
 
-
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,11 +23,10 @@
             </intent-filter>
         </activity>
 
-        <!--unable to find activity yg ini -->
-        <!--<activity-->
-        <!--android:name=".SettingsActivity"-->
-        <!--android:exported="false"-->
-        <!--android:parentActivityName=".MainActivity" />-->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
 
         <activity
             android:name=".AddTaskActivity"
@@ -40,7 +38,6 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
 
-        <!--klo ini ditambahin malah error-->
         <service
             android:name=".data.TaskUpdateService"
             android:exported="false" />
@@ -54,6 +51,10 @@
             android:authorities="com.noteit.mkpl_android_note_it"
             android:exported="false" />
 
+        <service
+            android:name=".data.CleanupJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>

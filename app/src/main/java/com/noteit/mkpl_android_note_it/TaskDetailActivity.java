@@ -1,4 +1,4 @@
-package com.mpkl.akhir.project.noteit;
+package com.noteit.mkpl_android_note_it;
 
 import android.app.DatePickerDialog;
 import android.database.Cursor;
@@ -16,12 +16,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mpkl.akhir.project.noteit.data.DatabaseContract;
-import com.mpkl.akhir.project.noteit.data.Task;
-import com.mpkl.akhir.project.noteit.data.TaskUpdateService;
-import com.mpkl.akhir.project.noteit.reminders.AlarmScheduler;
-import com.mpkl.akhir.project.noteit.views.DatePickerFragment;
-import com.mpkl.akhir.project.noteit.views.TaskTitleView;
+import com.noteit.mkpl_android_note_it.R;
+import com.noteit.mkpl_android_note_it.data.DatabaseContract;
+import com.noteit.mkpl_android_note_it.data.TaskUpdateService;
+import com.noteit.mkpl_android_note_it.reminders.AlarmScheduler;
+import com.noteit.mkpl_android_note_it.views.DatePickerFragment;
+import com.noteit.mkpl_android_note_it.views.TaskTitleView;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -54,7 +54,7 @@ public class TaskDetailActivity extends AppCompatActivity implements
 
         final Uri taskUri = getIntent().getData();
 
-        if(taskUri != null) {
+        if (taskUri != null) {
             Cursor cursor = getContentResolver().query(taskUri,
                     null, null, null, null);
             try {
@@ -90,15 +90,15 @@ public class TaskDetailActivity extends AppCompatActivity implements
 
         taskTitleView.setText(description);
 
-        if(iscompleted == 1) {
+        if (iscompleted == 1) {
             taskTitleView.setPaintFlags(taskTitleView.getPaintFlags()
                     | Paint.STRIKE_THRU_TEXT_FLAG);
         }
 
         dateView.setVisibility(View.VISIBLE);
 
-        if(System.currentTimeMillis() > datetime &&
-                datetime < System.currentTimeMillis() ) {
+        if (System.currentTimeMillis() > datetime &&
+                datetime < System.currentTimeMillis()) {
             CharSequence timeAgo = DateUtils.getRelativeTimeSpanString(datetime,
                     System.currentTimeMillis(), DateUtils.DAY_IN_MILLIS);
             dateView.setText(String.valueOf(timeAgo));
@@ -124,10 +124,10 @@ public class TaskDetailActivity extends AppCompatActivity implements
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_task_detail, menu);
-        if(iscompleted == 1) {
+        if (iscompleted == 1) {
             menu.getItem(2).setVisible(true);
         }
-        if(System.currentTimeMillis() > datetime &&
+        if (System.currentTimeMillis() > datetime &&
                 datetime < System.currentTimeMillis()) {
             menu.getItem(0).setVisible(false);
         }
