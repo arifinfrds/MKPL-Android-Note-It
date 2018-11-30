@@ -1,6 +1,7 @@
 package com.noteit.mkpl_android_note_it;
 
 import android.app.DatePickerDialog;
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.graphics.Paint;
 import android.net.Uri;
@@ -169,6 +170,8 @@ public class TaskDetailActivity extends AppCompatActivity implements
 
         AlarmScheduler.scheduleAlarm(this, c.getTimeInMillis(),
                 DatabaseContract.CONTENT_URI.buildUpon().appendPath(String.valueOf(id)).build());
+
+        finish();
 
     }
 }

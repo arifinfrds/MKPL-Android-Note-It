@@ -81,7 +81,7 @@ public class TaskProvider extends ContentProvider {
                 cursor = mDbHelper.getReadableDatabase().query(
                         DatabaseContract.TABLE_TASKS,
                         DatabaseContract.TaskColumns.COLUMNS,
-                        DatabaseContract.TaskColumns._ID + " = ? ",
+                        DatabaseContract.TaskColumns.DESCRIPTION + " LIKE ? ",
                         selectionArguments,
                         null,
                         null,
