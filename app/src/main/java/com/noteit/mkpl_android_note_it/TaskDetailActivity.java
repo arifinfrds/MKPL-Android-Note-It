@@ -165,6 +165,17 @@ public class TaskDetailActivity extends AppCompatActivity implements
         c.set(Calendar.MINUTE, 0);
         c.set(Calendar.SECOND, 0);
 
+//Update tanggal alarm
+
+        ContentValues values = new ContentValues(1);
+        values.put(DatabaseContract.TaskColumns.DUE_DATE, c.getTimeInMillis());
+
+        TaskUpdateService.updateTask(this, DatabaseContract.CONTENT_URI.buildUpon()
+                .appendPath(String.valueOf(id)).build(), values,
+                String.format("%s = ?", DatabaseContract.TaskColumns._ID), null);
+
+
+
         Toast.makeText(this, "Set Alarm "
                 + description + " Success", Toast.LENGTH_SHORT).show();
 
